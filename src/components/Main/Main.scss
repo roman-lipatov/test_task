@@ -1,0 +1,237 @@
+@import "../../mixins.scss";
+@import "../../fonts.scss";
+
+.main {
+  box-sizing: border-box;
+
+  &__words {
+    display: none;
+    font-family: "GrtskGiga", sans-serif;
+    font-size: 14px;
+    line-height: 140%;
+    text-align: center;
+
+    &-title {
+      position: absolute;
+      top: 45%;
+      left: 45%;
+    }
+
+    &-where {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      color: #373737;
+      text-decoration: none;
+      transform: rotate(-90deg);
+      transition: all 1s;
+      
+      &:hover {
+        color: #fff;
+        border-bottom: 1px solid #fff;
+      }
+    }
+
+    &-who {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      color: #373737;
+      text-decoration: none;
+      margin-bottom: 12px;
+      transition: all 1s;
+
+      &:hover {
+        color: #fff;
+        border-bottom: 1px solid #fff;
+      }
+
+      @include onBig {
+        margin-bottom: 19px;
+      }
+    }
+
+    &-what {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      color: #373737;
+      text-decoration: none;
+      transform: rotate(90deg);
+      transition: all 1s;
+
+      &:hover {
+        color: #fff;
+        border-bottom: 1px solid #fff;
+      }
+    }
+    
+    @include onScreen {
+      display: inline;
+    }
+  }
+
+  &__content {
+
+    &-circleOne {
+      margin: auto;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(
+        closest-side,#ffcb46,#ffcb46 75%,transparent 100%);
+
+      &::before {
+        content: "";
+        border-radius: 100%;
+        position: absolute;
+        top: 0;
+        left: 15%;
+        z-index: -1;
+        width: 70%;
+        height: 100%;
+      }
+
+      @include onScreen {
+        width: 482px;
+        height: 482px;
+      }
+  
+      @include onBig {
+        width: 578px;
+        height: 578px;
+      }
+    }
+
+    &-circleTwo {
+      height: 130px;
+      background-image: url(../../images/showreelshowreelshowreel.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+      border-radius: 50%;
+      color: #000;
+      margin-top: -5px;
+      margin-left: 130px;
+      transition: all 10s linear ;
+
+      &:hover {
+        animation: 4s linear 0s reverse none infinite running rot;
+        -webkit-animation: 4s linear 0s reverse none infinite running rot;
+      }
+     
+
+      @include onScreen {
+        margin-top: -5px;
+        margin-left: 300px;
+      }
+
+      @include onMedium {
+        margin-top: -5px;
+        margin-left: 300px;
+      }
+      @include onMain {
+        margin-top: 15px;
+        margin-left: 330px;
+      }
+
+      @include onBig {
+        margin-top: 35px;
+        margin-left: 390px;
+      }
+    }
+
+    &-diagonal {
+      position: absolute;
+      left: 0;
+      font-family: "GrtskGiga", sans-serif;
+      font-size: 42px;
+      transform: rotate(135deg);
+      z-index: -1;
+    }
+  }
+}
+
+@keyframes rot {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes rot {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.dot {
+  position: absolute;
+  height: 8px;
+  width: 8px;
+  border-radius: 50%;
+  left: 67%;
+  top: 66%;
+  // margin-bottom: 90%;
+  // margin-left: 64%;
+  background-color: #000;
+
+  @include onScreen {
+    left: 69%;
+    top: 66%;
+  }
+
+  @include onMedium {
+    left: 69.5%;
+    top: 67%;
+  }
+  @include onMain {
+    left: 66%;
+    top: 61%;
+  }
+
+  @include onBig {
+    left: 63.5%;
+    top: 58%;
+  }
+}
+
+.text-circle {
+  text-align: center;
+  font-family: "GrtskGiga", sans-serif;
+  font-size: 34px;
+  font-weight: bold;
+  color: #373737;
+  width: 333px;
+  height: 111px;
+  line-height: 110%;
+  padding-top: 30%;
+  margin-left: -5%;
+
+  @include onMedium {
+    width: 568px;
+    height: 192px;
+    font-size: 58px;
+    line-height: 110%;
+    margin-left: -10%;
+  }
+
+  @include onMain {
+    width: 724px;
+    height: 128px;
+    font-size: 58px;
+    line-height: 110%;
+    padding-top: 35%;
+    margin-left: -25%;
+  }
+  @include onBig {
+    width: 1023px;
+    height: 180px;
+    font-size: 82px;
+    line-height: 110%;
+    padding-top: 30%;
+    margin-left: -30%;
+  }
+}

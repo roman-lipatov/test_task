@@ -1,0 +1,61 @@
+@import "../../mixins.scss";
+
+.header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 16px 84px;
+
+  &__selector {
+    display: flex;
+    flex-direction: row;
+    background-image: url(../../images/tongue.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    padding: 15px;
+  }
+
+  &__logo {
+    cursor: pointer;
+  }
+
+  &__menu {
+    display: block;
+    height: 8px;
+    width: 22px;
+    padding-bottom: 5px;
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+    cursor: pointer;
+     
+    @include onScreen {
+      visibility: hidden;
+    }
+  }
+
+  @include onScreen {
+    padding: 16px 16px 100px;
+  }
+
+  @include onMain {
+    padding: 16px 17px 80px;
+  }
+
+  @include onBig {
+    padding: 24px 24px 200px;
+  }
+}
+
+.text {
+  &__left {
+    left: 0;
+    top: 50%;
+  }
+  &__bottom {
+    left: 50%;
+    top: 100%;
+  }
+}
